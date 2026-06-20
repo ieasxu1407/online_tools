@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1">
+
+<title>전체 도구</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<link rel="stylesheet"
+
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<style>
+
+body{
+
+background:#f5f7fa;
+
+padding-top:80px;
+
+transition:.3s;
+
+}
+
+.page-title{
+
+background:linear-gradient(135deg,#0d6efd,#5b9dff);
+
+padding:50px;
+
+border-radius:25px;
+
+color:white;
+
+text-align:center;
+
+margin-bottom:40px;
+
+}
+
+.tool-card{
+
+border:none;
+
+border-radius:20px;
+
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+transition:.3s;
+
+height:100%;
+
+}
+
+.tool-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+}
+
+.tool-icon{
+
+font-size:55px;
+
+color:#0d6efd;
+
+}
+
+.category{
+
+margin-top:50px;
+
+margin-bottom:20px;
+
+font-weight:bold;
+
+}
+
+.dark{
+
+background:#121212;
+
+color:white;
+
+}
+
+.dark .tool-card{
+
+background:#1f1f1f;
+
+color:white;
+
+}
+
+.dark .navbar{
+
+background:#000!important;
+
+}
+
+.dark .page-title{
+
+background:linear-gradient(135deg,#222,#444);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+
+<div class="container">
+
+<a class="navbar-brand fw-bold"
+
+href="index.html">
+
+Online Tools
+
+</a>
+
+<button
+
+class="navbar-toggler"
+
+data-bs-toggle="collapse"
+
+data-bs-target="#navbar">
+
+<span class="navbar-toggler-icon">
+
+</span>
+
+</button>
+
+<div class="collapse navbar-collapse"
+
+id="navbar">
+
+<ul class="navbar-nav me-auto">
+
+<li class="nav-item">
+
+<a class="nav-link"
+
+href="index.html">
+
+홈
+
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link active"
+
+href="tools.html">
+
+전체도구
+
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link"
+
+href="notice.html">
+
+공지사항
+
+</a>
+
+</li>
+
+</ul>
+
+<input
+
+id="search"
+
+class="form-control me-2"
+
+placeholder="도구 검색">
+
+<button
+
+class="btn btn-light"
+
+id="themeBtn">
+
+🌙
+
+</button>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<div class="container">
+
+<div class="page-title">
+
+<h1>
+
+전체 도구
+
+</h1>
+
+<p>
+
+원하는 도구를 선택해보세요
+
+</p>
+
+</div>
+
+
+
+<h2 class="category">
+
+⏰ 시간 도구
+
+</h2>
+
+<div class="row g-4">
+
+<div class="col-md-3 tool">
+
+<div class="card tool-card">
+
+<div class="card-body text-center">
+
+<i class="bi bi-alarm tool-icon"></i>
+
+<h4>타이머</h4>
+
+<a href="tools/timer.html"
+
+class="btn btn-primary">
+
+사용하기
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="col-md-3 tool">
+
+<div class="card tool-card">
+
+<div class="card-body text-center">
+
+<i class="bi bi-stopwatch tool-icon">
+
+</i>
+
+<h4>스톱워치</h4>
+
+<a href="tools/stopwatch.html"
+
+class="btn btn-primary">
+
+사용하기
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="col-md-3 tool">
+
+<div class="card tool-card">
+
+<div class="card-body text-center">
+
+<i class="bi bi-clock tool-icon">
+
+</i>
+
+<h4>시계</h4>
+
+<a href="tools/clock.html"
+
+class="btn btn-primary">
+
+사용하기
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="col-md-3 tool">
+
+<div class="card tool-card">
+
+<div class="card-body text-center">
+
+<i class="bi bi-calendar3 tool-icon">
+
+</i>
+
+<h4>달력</h4>
+
+<a href="tools/calendar.html"
+
+class="btn btn-primary">
+
+사용하기
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<h2 class="category">
+
+📝 문서 도구
+
+</h2>
+
+<div class="row g-4">
+
+
+<div class="col-md-3 tool">
+
+<div class="card tool-card">
+
+<div class="card-body text-center">
+
+<i class="bi bi-journal-text tool-icon">
+
+</i>
+
+<h4>메모장</h4>
+
+<a href="tools/memo.html"
+
+class="btn btn-primary">
+
+사용하기
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="col-md-3 tool">
+
+<div class="card tool-card">
+
+<div class="card-body text-center">
+
+<i class="bi bi-qr-code tool-icon">
+
+</i>
+
+<h4>QR 생성기</h4>
+
+<a href="tools/qr.html"
+
+class="btn btn-primary">
+
+사용하기
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="col-md-3 tool">
+
+<div class="card tool-card">
+
+<div class="card-body text-center">
+
+<i class="bi bi-shield-lock tool-icon">
+
+</i>
+
+<h4>비밀번호 생성기</h4>
+
+<a href="tools/password.html"
+
+class="btn btn-primary">
+
+사용하기
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<h2 class="category">
+
+🧮 계산 도구
+
+</h2>
+
+<div class="row g-4">
+
+
+<div class="col-md-3 tool">
+
+<div class="card tool-card">
+
+<div class="card-body text-center">
+
+<i class="bi bi-calculator tool-icon">
+
+</i>
+
+<h4>계산기</h4>
+
+<a href="tools/calculator.html"
+
+class="btn btn-primary">
+
+사용하기
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="col-md-3 tool">
+
+<div class="card tool-card">
+
+<div class="card-body text-center">
+
+<i class="bi bi-rulers tool-icon">
+
+</i>
+
+<h4>단위 변환기</h4>
+
+<a href="tools/unit.html"
+
+class="btn btn-primary">
+
+사용하기
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="col-md-3 tool">
+
+<div class="card tool-card">
+
+<div class="card-body text-center">
+
+<i class="bi bi-dice-5 tool-icon">
+
+</i>
+
+<h4>랜덤 추첨기</h4>
+
+<a href="tools/random.html"
+
+class="btn btn-primary">
+
+사용하기
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<h2 class="category">
+
+🎨 그리기 도구
+
+</h2>
+
+<div class="row g-4">
+
+<div class="col-md-3 tool">
+
+<div class="card tool-card">
+
+<div class="card-body text-center">
+
+<i class="bi bi-pencil-square tool-icon">
+
+</i>
+
+<h4>화이트보드</h4>
+
+<a href="tools/whiteboard.html"
+
+class="btn btn-primary">
+
+사용하기
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<h2 class="category">
+
+🌤 생활 도구
+
+</h2>
+
+<div class="row g-4">
+
+<div class="col-md-3 tool">
+
+<div class="card tool-card">
+
+<div class="card-body text-center">
+
+<i class="bi bi-cloud-sun tool-icon">
+
+</i>
+
+<h4>날씨</h4>
+
+<a href="tools/weather.html"
+
+class="btn btn-primary">
+
+사용하기
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+document
+
+.getElementById("themeBtn")
+
+.onclick=()=>{
+
+document.body
+
+.classList.toggle("dark");
+
+localStorage.setItem(
+
+"theme",
+
+document.body
+
+.classList
+
+.contains("dark")
+
+?
+
+"dark"
+
+:
+
+"light"
+
+);
+
+};
+
+
+if(
+
+localStorage
+
+.getItem("theme")
+
+==="dark"
+
+){
+
+document.body
+
+.classList
+
+.add("dark");
+
+}
+
+
+
+document
+
+.getElementById("search")
+
+.addEventListener(
+
+"keyup",
+
+function(){
+
+let value=
+
+this.value
+
+.toLowerCase();
+
+document
+
+.querySelectorAll(".tool")
+
+.forEach(card=>{
+
+card.style.display=
+
+card.innerText
+
+.toLowerCase()
+
+.includes(value)
+
+?
+
+"block"
+
+:
+
+"none";
+
+});
+
+});
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
