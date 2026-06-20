@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>스톱워치</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<style>
+
+body{
+background:#f5f7fa;
+padding-top:80px;
+transition:.3s;
+}
+
+.stopwatch-box{
+max-width:800px;
+margin:auto;
+padding:40px;
+background:white;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.display{
+font-size:60px;
+font-weight:bold;
+text-align:center;
+margin:30px 0;
+font-family:monospace;
+}
+
+.lap-list{
+max-height:300px;
+overflow:auto;
+}
+
+.dark{
+background:#121212;
+color:white;
+}
+
+.dark .navbar{
+background:#000!important;
+}
+
+.dark .stopwatch-box{
+background:#1f1f1f;
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+
+<div class="container">
+
+<a class="navbar-brand fw-bold"
+href="../index.html">
+
+Online Tools
+
+</a>
+
+<button
+class="navbar-toggler"
+data-bs-toggle="collapse"
+data-bs-target="#navbar">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse"
+id="navbar">
+
+<ul class="navbar-nav me-auto">
+
+<li class="nav-item">
+<a class="nav-link"
+href="../index.html">
+홈
+</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link"
+href="../tools.html">
+전체도구
+</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link"
+href="../notice.html">
+공지사항
+</a>
+</li>
+
+</ul>
+
+<button
+class="btn btn-light"
+id="themeBtn">
+
+🌙
+
+</button>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<div class="container">
+
+<div class="stopwatch-box">
+
+<h1 class="text-center">
+
+<i class="bi bi-stopwatch"></i>
+
+스톱워치
+
+</h1>
+
+
+<div class="display"
+id="display">
+
+00:00:00.000
+
+</div>
+
+
+<div class="text-center mb-4">
+
+<button
+class="btn btn-primary m-1"
+onclick="startStopwatch()">
+
+시작
+
+</button>
+
+<button
+class="btn btn-warning m-1"
+onclick="pauseStopwatch()">
+
+일시정지
+
+</button>
+
+<button
+class="btn btn-success m-1"
+onclick="resumeStopwatch()">
+
+재개
+
+</button>
+
+<button
+class="btn btn-info m-1"
+onclick="lapTime()">
+
+랩타임
+
+</button>
+
+<button
+class="btn btn-danger m-1"
+onclick="resetStopwatch()">
+
+초기화
+
+</button>
+
+</div>
+
+
+<h4>
+
+랩타임 기록
+
+</h4>
+
+<ul
+class="list-group lap-list"
+id="lapList">
+
+</ul>
+
+</div>
+
+</div>
+
+
+<script>
+
+let startTime=0;
+let elapsedTime=0;
+let timerInterval=null;
+
+function updateDisplay(){
+
+const current=
+Date.now()-startTime+elapsedTime;
+
+const hours=
+Math.floor(current/3600000);
+
+const minutes=
+Math.floor((current%3600000)/60000);
+
+const seconds=
+Math.floor((current%60000)/1000);
+
+const ms=
+current%1000;
+
+document
+.getElementById("display")
+.innerHTML=
+
+String(hours).padStart(2,"0")
+
++":"
+
++
+
+String(minutes).padStart(2,"0")
+
++":"
+
++
+
+String(seconds).padStart(2,"0")
+
++"."
+
++
+
+String(ms).padStart(3,"0");
+
+}
+
+function startStopwatch(){
+
+clearInterval(timerInterval);
+
+elapsedTime=0;
+
+startTime=Date.now();
+
+timerInterval=
+setInterval(updateDisplay,10);
+
+}
+
+function pauseStopwatch(){
+
+clearInterval(timerInterval);
+
+elapsedTime+=
+Date.now()-startTime;
+
+}
+
+function resumeStopwatch(){
+
+clearInterval(timerInterval);
+
+startTime=Date.now();
+
+timerInterval=
+setInterval(updateDisplay,10);
+
+}
+
+function resetStopwatch(){
+
+clearInterval(timerInterval);
+
+elapsedTime=0;
+
+document
+.getElementById("display")
+.innerHTML=
+"00:00:00.000";
+
+document
+.getElementById("lapList")
+.innerHTML="";
+
+}
+
+function lapTime(){
+
+const lap=
+document
+.getElementById("display")
+.innerText;
+
+const li=
+document
+.createElement("li");
+
+li.className=
+"list-group-item";
+
+li.textContent=
+lap;
+
+document
+.getElementById("lapList")
+.prepend(li);
+
+}
+
+document
+.getElementById("themeBtn")
+.onclick=()=>{
+
+document.body
+.classList.toggle("dark");
+
+localStorage.setItem(
+"theme",
+
+document.body
+.classList
+.contains("dark")
+
+?
+
+"dark"
+
+:
+
+"light"
+
+);
+
+};
+
+if(
+localStorage.getItem("theme")
+==="dark"
+){
+document.body.classList.add("dark");
+}
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
